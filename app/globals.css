@@ -1,27 +1,23 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255; /* Branco para texto claro */
+  --background-primary-rgb: 3, 105, 161; /* Azul escuro */
+  --background-secondary-rgb: 255, 153, 51; /* Laranja */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255; /* Mantendo branco no modo escuro */
+    --background-primary-rgb: 0, 43, 77; /* Um azul mais escuro para o modo escuro */
+    --background-secondary-rgb: 255, 140, 0; /* Laranja um pouco mais escuro para o modo escuro */
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-primary-rgb));
 }
