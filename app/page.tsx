@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {isConnected && !isReconnecting ? (
-        <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="text-7xl font-bold">NFT Viewer</h1>
+        <div className="flex flex-col items-center justify-center gap-4 text-center p-2">
+          <h1 className="text-5xl font-bold">NFT Viewer</h1>
           <ConnectButton />
 
           {isLoadingNfts ? (
@@ -23,7 +23,7 @@ export default function Home() {
               {nfts.length === 0 ? (
                 <span>We cannot found any NFT :(</span>
               ) : (
-                <div className="flex gap-4 justify-center items-center">
+                <div className="flex flex-wrap gap-4 justify-center items-center m-3 md:flex-nowrap">
                   {nfts.map(nft => (
                     <NFTCardComponent
                       imageUrl={nft.image.pngUrl!}

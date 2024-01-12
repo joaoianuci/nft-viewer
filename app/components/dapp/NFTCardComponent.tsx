@@ -26,12 +26,15 @@ export function NFTCardComponent({
           height={300}
           src={imageUrl}
           alt={title}
-          className="h-auto m-[10px] max-w-[200px] rounded-2xl"
+          className="h-auto m-[10px] max-w-[150px] min-h-[170px] rounded-2xl"
         />
       </div>
-      <div className="px-6 py-4">
+      <div className="px-6 py-4 min-h-[120px] justify-center items-center">
         <div className="font-bold text-xl mb-2 text-white">{title}</div>
         <p className="text-gray-300 text-base">{series}</p>
+      </div>
+      <div className="px-6 py-2 max-h-[75] scroll-thin text-gray-300 text-start overflow-auto border-solid border-t-[1px] border-[#b81e5e42]">
+        <span>{status}</span>
       </div>
     </div>
   )

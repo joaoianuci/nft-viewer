@@ -7,6 +7,27 @@
   --foreground-rgb: 255, 255, 255; /* Mantendo branco para texto claro */
   --background-primary-rgb: 8, 5, 10; /* Preto muito escuro */
   --background-secondary-rgb: 18, 12, 24; /* Cinza escuro */
+
+  .scroll-thin::-webkit-scrollbar {
+    width: 3px; /* Width of the scrollbar */
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px; /* Width of the entire scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f0a14; /* Color of the track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a36; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Optional: to make thumb corners rounded */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a2a36; /* Color of the thumb on hover */
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,4 +41,6 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-primary-rgb));
+
+  /* Global scrollbar styles */
 }
