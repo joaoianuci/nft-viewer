@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
 
-const inter = Roboto({
+const inter = Inter({
   subsets: ['latin'],
-  weight: '100'
+  weight: '300'
 })
 
 export const metadata: Metadata = {

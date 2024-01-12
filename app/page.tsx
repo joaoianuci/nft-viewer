@@ -4,6 +4,7 @@ import ConnectButton from './components/dapp/ConnectButton'
 import { useAccount } from 'wagmi'
 import { AlchemyContext, AlchemySdk } from './contexts/AlchemySdk'
 import Image from 'next/image'
+import { NFTCardComponent } from './components/dapp/NFTCardComponent'
 
 export default function Home() {
   const { address, isConnected, isReconnecting } = useAccount()
@@ -12,7 +13,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {isConnected && !isReconnecting ? (
         <div className="flex flex-col items-center justify-center gap-4">
-          <h1>{address} is connected. You want disconnect?</h1>
+          <h1 className="text-7xl font-bold">NFT Viewer</h1>
           <ConnectButton />
 
           {isLoadingNfts ? (
@@ -24,21 +25,13 @@ export default function Home() {
               ) : (
                 <div className="flex gap-4 justify-center items-center">
                   {nfts.map(nft => (
-                    <div
+                    <NFTCardComponent
+                      imageUrl={nft.image.pngUrl!}
                       key={`${nft.tokenId}-${nft.contract.address}`}
-                      className="flex flex-col gap-4 justify-center items-center"
-                    >
-                      <div className="flex flex-wrap justify-center">
-                        <Image
-                          width={300}
-                          height={300}
-                          src={nft.image.pngUrl as string}
-                          alt={nft.name as string}
-                          className="h-auto m-[10px] max-w-[100%]"
-                        />
-                      </div>
-                      <span>{nft.name}</span>
-                    </div>
+                      series={nft.collection?.name!}
+                      status={nft.description!}
+                      title={nft.name!}
+                    />
                   ))}
                 </div>
               )}

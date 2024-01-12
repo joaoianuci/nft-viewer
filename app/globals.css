@@ -4,16 +4,16 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255; /* Branco para texto claro */
-  --background-primary-rgb: 3, 105, 161; /* Azul escuro */
-  --background-secondary-rgb: 255, 153, 51; /* Laranja */
+  --foreground-rgb: 255, 255, 255; /* Mantendo branco para texto claro */
+  --background-primary-rgb: 8, 5, 10; /* Preto muito escuro */
+  --background-secondary-rgb: 18, 12, 24; /* Cinza escuro */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255; /* Mantendo branco no modo escuro */
-    --background-primary-rgb: 0, 43, 77; /* Um azul mais escuro para o modo escuro */
-    --background-secondary-rgb: 255, 140, 0; /* Laranja um pouco mais escuro para o modo escuro */
+    --background-primary-rgb: 8, 5, 10; /* Preto muito escuro para o modo escuro */
+    --background-secondary-rgb: 18, 12, 24; /* Cinza escuro para o modo escuro */
   }
 }
 
