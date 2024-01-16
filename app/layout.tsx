@@ -1,11 +1,18 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Jura } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: '300'
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter'
+})
+
+const jura = Jura({
+  subsets: ['latin'],
+  weight: '500',
+  variable: '--font-jura'
 })
 
 export const metadata: Metadata = {
@@ -20,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${jura.variable}`}>
         <Providers>{children}</Providers>
       </body>
     </html>

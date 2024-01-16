@@ -8,6 +8,16 @@
   --background-primary-rgb: 8, 5, 10; /* Preto muito escuro */
   --background-secondary-rgb: 18, 12, 24; /* Cinza escuro */
 
+  /* colors variables */
+  --primary: #f7fc0e;
+  --dark-primary: #030303;
+  --dark-secondary: #ffffff;
+  --message: #2962ff;
+  --error: #f03d3d;
+  --success: #0bb07b;
+  --warning: #ffce52;
+  --info: #e0e0e0;
+
   .scroll-thin::-webkit-scrollbar {
     width: 3px; /* Width of the scrollbar */
   }
@@ -32,15 +42,78 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255; /* Mantendo branco no modo escuro */
-    --background-primary-rgb: 8, 5, 10; /* Preto muito escuro para o modo escuro */
-    --background-secondary-rgb: 18, 12, 24; /* Cinza escuro para o modo escuro */
+    background: url('./assets/background-lights.svg') center/cover no-repeat; /* Set the SVG image as background */
+    background-color: #030303;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-primary-rgb));
+  font-family: var(--font-inter);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  .jura {
+    font-family: var(--font-jura);
+  }
+
+  /* all li in a ul in a nav receive that */
+  nav ul li:hover {
+    color: var(--primary);
+    transition: color 0.2s ease-in-out;
+  }
+
+  div.hero-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+  }
+
+  div.hero-box div.hero-fill {
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background-image: linear-gradient(
+      150deg,
+      rgba(255, 255, 255, 0.44),
+      rgba(143, 143, 143, 0.21)
+    );
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  div.hero-box div.hero-lights {
+    position: absolute;
+    inset: 0;
+    background-image: url('./assets/hero-lights.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 125%;
+    opacity: 0.48;
+    z-index: -1;
+  }
+
+  div.hero-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    padding: 3px;
+    background: linear-gradient(150deg, #e025ce, #4aed52, #bd24e6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    opacity: 0.7;
+  }
 
   /* Global scrollbar styles */
 }
