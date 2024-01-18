@@ -105,7 +105,7 @@ body {
     position: absolute;
     inset: 0;
     border-radius: 6px;
-    padding: 3px;
+    padding: 4px;
     background: linear-gradient(150deg, #e025ce, #4aed52, #bd24e6);
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
@@ -114,6 +114,53 @@ body {
     z-index: -1;
     opacity: 0.7;
   }
+
+  div.hero-box::after {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 90px;
+    height: 30px;
+    border-radius: 6px;
+    padding: 2px;
+    background: linear-gradient(150deg, #e025ce, #4aed52, #bd24e6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.7;
+  }
+
+  div.hero-text {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 90px;
+    height: 30px;
+    padding: 2px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  
+  div.hero-box div.mini-hero-fill {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 90px;
+    height: 30px;
+    border-radius: 6px;
+    background-image: linear-gradient(
+      150deg,
+      rgba(255, 255, 255, 0.44),
+      rgba(143, 143, 143, 0.21)
+    );
+    opacity: 0.3;
+    z-index: -1;
+  }
+
 
   /* Global scrollbar styles */
 }

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Button } from '../button/Button'
+import ConnectButton from '../dapp/ConnectButton'
 
 export const Hero = () => {
   return (
@@ -18,7 +19,9 @@ export const Hero = () => {
       </div>
       <div className="hero-box">
         <div className="hero-fill"></div>
+        <div className="mini-hero-fill"></div>
         <div className="hero-lights"></div>
+        <div className="hero-text">TOP 1</div>
         <div className="mt-[-15%] z-10">
           <Image src="hero.svg" alt="hero" width={400} height={400} />
         </div>
